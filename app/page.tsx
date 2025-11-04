@@ -4,6 +4,9 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { FaWhatsapp } from 'react-icons/fa';
+import { FaFileAlt } from 'react-icons/fa';
+
 import {
   Github,
   Linkedin,
@@ -22,7 +25,7 @@ interface Project {
   title: string
   description: string
   technologies: string[]
-  githubUrl: string
+  githubUrl?: string
   liveUrl?: string
   featured: boolean
 }
@@ -45,28 +48,50 @@ export default function Portfolio() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Healthcare Diagnosis Predictor",
-      description:
-        "Machine learning project that predicts patient medical conditions using demographic and clinical data with a Random Forest model.",
-      technologies: ["Python", "pandas", "scikit-learn"],
-      githubUrl: "https://github.com/yogeshGit11/healthcare-diagnosis-predictor",
+      title: "Xogolign(Worxogo)",
+      description: "Xopologin is a tool that helps companies track and improve how employees perform. It makes work more engaging by using games, feedback, and analytics. I worked as a Senior Backend Developer and built the main backend system using Python. I created APIs to connect different parts of the system, helped track user performance through KPIs, added feedback and noticeboard features, and built tools for admins to manage users and teams. I also made sure the system was secure and customizable for different clients.",
+      technologies: [
+        "Python",
+        "Django",
+        "MySQL",
+        "Amazon Redshift",
+        "Celery",
+        "Jenkins",
+        "Jira",
+        "Bastion Server"
+      ],
       featured: true,
     },
     {
       id: 2,
-      title: "AI Prompt Review Project",
+      title: "AI Prompt Review Project(Turing)",
       description:
-        "Evaluated AI-generated responses by providing prompts, reviewing outputs, and giving feedback to improve model performance at Turing.",
+        "Evaluated and enhanced AI-generated Python code and responses to improve model performance at Turing. Responsibilities included annotating and evaluating AI-generated code related to APIs, automation scripts, and data workflows; reviewing model outputs for correctness, scalability, readability, and adherence to Pythonic best practices; assessing prompts and responses involving frameworks, libraries, and software architecture; providing structured feedback to improve model understanding of modern Python development practices; and identifying inaccuracies, bugs, and performance issues in AI-generated code while suggesting optimizations.",
       technologies: ["Python", "AI Evaluation", "Prompt Engineering", "Data Analysis"],
-      githubUrl: "https://github.com/yourusername/ai-prompt-review",
       featured: true,
     },
     {
       id: 3,
-      title: "Task Management System",
-      description: "Collaborative task management with real-time updates and team collaboration features",
-      technologies: ["Python", "Flask", "SQLAlchemy", "WebSocket", "JWT"],
-      githubUrl: "https://github.com/yourusername/task-manager",
+      title: "HrithikMania",
+      description:
+        "A full-stack fan-made website dedicated to Bollywood superstar Hrithik Roshan, built with React.js (frontend) and Django REST Framework (backend). Features include a PostgreSQL database, AWS S3 media storage, and a fully Dockerized environment with locally tested Kubernetes manifests. Infrastructure is provisioned on AWS EC2 using Terraform, configured via Ansible, and served through a Dockerized Nginx reverse proxy. A robust CI/CD pipeline with GitHub Actions automates testing, building, and deployment. Users can search movies, view detailed cast and director info, box office stats, posters, and synopses.",
+      technologies: [
+        "React.js",
+        "Nginx",
+        "Django REST Framework (DRF)",
+        "Gunicorn",
+        "PostgreSQL (Dockerized)",
+        "AWS S3 (hritikmania-media)",
+        "AWS EC2 (Ubuntu)",
+        "Terraform",
+        "Ansible",
+        "Docker",
+        "Docker Compose",
+        "Kubernetes",
+        "GitHub Actions",
+      ],
+
+      githubUrl: "https://github.com/yogeshGit11/HrithikMania",
       featured: false,
     },
   ]
@@ -78,12 +103,31 @@ export default function Portfolio() {
       position: "Backend Developer",
       duration: "2024 - Present",
       description: [
-        "Developed ML project that predicts patient medical conditions using demographic and clinical data with Random Forest model",
-        "Evaluated AI-generated responses by providing prompts and constructive feedback to improve model performance",
-        "Implemented automated testing increasing code coverage to 85 percent",
-        "Collaborated with frontend team to integrate APIs seamlessly",
+        "Built the main backend system for Xopologin, creating APIs, tracking KPIs, implementing feedback and noticeboard features, and providing admin management tools while ensuring security and client-specific customizations.",
+        "Evaluated and enhanced AI-generated Python code and responses at Turing, reviewing outputs for correctness, scalability, readability, and Pythonic best practices; provided structured feedback and suggested optimizations.",
+        "Developed HrithikMania, a full-stack fan website with React.js frontend and Django REST Framework backend, integrating PostgreSQL, AWS S3, Dockerized services, locally tested Kubernetes manifests, and a CI/CD pipeline with GitHub Actions and Ansible.",
+        "Collaborated with cross-functional teams to integrate APIs, automate deployments, and maintain scalable, secure, and maintainable systems across projects.",
       ],
-      technologies: ["Python", "Django", "FastAPI", "PostgreSQL", "Docker", "AWS", "Kubernetes", "DevOps"],
+      technologies: [
+        "Python",
+        "Django",
+        "JavaScript",
+        "React.js",
+        "PostgreSQL",
+        "MySQL",
+        "Docker",
+        "Kubernetes",
+        "AWS",
+        "Terraform",
+        "Ansible",
+        "GitHub Actions",
+        "Celery",
+        "Jenkins",
+        "FastAPI",
+        "DevOps",
+        "AI Evaluation",
+        "Prompt Engineering",
+      ],
     },
     {
       id: 2,
@@ -153,11 +197,11 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-x-hidden">
       {/* Animated Background Elements */}
-  <div className="fixed inset-0 overflow-hidden pointer-events-none">
-  <div className="absolute -top-48 -right-48 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-duration-8000"></div>
-  <div className="absolute -bottom-48 -left-48 w-96 h-96 bg-teal-400 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-1500 animation-duration-10000"></div>
-  <div className="absolute top-48 left-48 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-3000 animation-duration-12000"></div>
-</div>
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-48 -right-48 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter  opacity-30 animate-blob animation-duration-8000"></div>
+        <div className="absolute -bottom-48 -left-48 w-96 h-96 bg-teal-400 rounded-full mix-blend-multiply filter  opacity-30 animate-blob animation-delay-1500 animation-duration-10000"></div>
+        <div className="absolute top-48 left-48 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter  opacity-30 animate-blob animation-delay-3000 animation-duration-12000"></div>
+      </div>
 
 
 
@@ -165,9 +209,12 @@ export default function Portfolio() {
       <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md border-b border-purple-500/20 z-40">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
-              <span>{"<Yogesh Chaudhari />"}</span>
+            <div className="text-xl font-bold text-center">
+              <span className="code-shimmer-delay">
+                {"<Yogesh Chaudhari />"}
+              </span>
             </div>
+
 
             {/* Hamburger for small screens */}
             <button
@@ -184,15 +231,13 @@ export default function Portfolio() {
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`capitalize transition-all duration-300 relative group ${
-                    activeSection === section ? "text-cyan-400 font-medium" : "text-slate-300 hover:text-white"
-                  }`}
+                  className={`capitalize transition-all duration-300 relative group ${activeSection === section ? "text-cyan-400 font-medium" : "text-slate-300 hover:text-white"
+                    }`}
                 >
                   {section}
                   <span
-                    className={`absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transform transition-transform duration-300 ${
-                      activeSection === section ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                    }`}
+                    className={`absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transform transition-transform duration-300 ${activeSection === section ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                      }`}
                   ></span>
                 </button>
               ))}
@@ -205,9 +250,8 @@ export default function Portfolio() {
                 <button
                   key={section}
                   onClick={() => { setMobileOpen(false); scrollToSection(section); }}
-                  className={`w-full text-left py-2 px-2 rounded ${
-                    activeSection === section ? "text-cyan-400 font-medium" : "text-slate-300 hover:text-white"
-                  }`}
+                  className={`w-full text-left py-2 px-2 rounded ${activeSection === section ? "text-cyan-400 font-medium" : "text-slate-300 hover:text-white"
+                    }`}
                 >
                   {section}
                 </button>
@@ -221,146 +265,132 @@ export default function Portfolio() {
       <section id="about" className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center py-20">
-              {/* <div
+            {/* <div
                 className={`mb-8 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
               >
                 <div className="w-32 h-32 mx-auto bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-6 animate-spin-slow shadow-2xl shadow-purple-500/25">
                   <Code className="w-16 h-16 text-white animate-pulse" />
                 </div>
               </div> */}
-              <div
-  className={`mb-12 transform transition-all duration-1000 ${
-    isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-  }`}
->
-  <div className="relative w-68 h-64 mx-auto mb-6">
-    {/* Gradient rotating ring */}
-    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-full animate-spin-slow"></div>
+            <div
+              className={`mb-12 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
+            >
+              <div className="relative w-68 h-64 mx-auto mb-6">
+                {/* Gradient rotating ring */}
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-full animate-spin-slow"></div>
 
-    {/* Inner profile image container */}
-    <div className="absolute inset-[6px] bg-white dark:bg-gray-900 rounded-full overflow-hidden flex items-center justify-center shadow-2xl shadow-purple-500/25 animate-float">
-      <img
-        src="/ypc.jpeg"
-        alt="Yogesh Chaudhari - Python Developer"
-        className="w-full h-full object-cover rounded-full border-4 border-white animate-pulse-slow"
-      />
-    </div>
-  </div>
-</div>
+                {/* Inner profile image container */}
+                <div className="absolute inset-[6px] bg-white dark:bg-gray-900 rounded-full overflow-hidden flex items-center justify-center shadow-2xl shadow-purple-500/25 animate-float">
+                  <img
+                    src="/ypc.jpeg"
+                    alt="Yogesh Chaudhari - Python Developer"
+                    className="w-full h-full object-cover rounded-full border-4 border-white animate-pulse-slow"
+                  />
+                </div>
+              </div>
+            </div>
 
-<div
-  className={`transform transition-all duration-1000 delay-300 ${
-    isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-  }`}
->
-  <h1
-    className="text-4xl md:text-5xl font-bold text-center 
-               bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 
-               bg-clip-text text-transparent 
-               mb-5 
-               animate-pulse hover:scale-105 transition-transform duration-100"
-  >
-    Yogesh Chaudhari
-  </h1>
-</div>
+            <div
+              className={`transform transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
+            >
+              <h1 className="text-4xl md:text-5xl font-bold text-center 
+                 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 
+                 bg-clip-text text-transparent 
+                 mb-5
+                 typing-loop">
+                Hello! I’m Yogesh
+              </h1>
+            </div>
 
 
 
 
 
-<div
-  className={`transform transition-all duration-1000 delay-500 ${
-    isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-  }`}
->
-  <p className="font-sans text-lg md:text-xl text-slate-300 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed text-center">
-    Experienced   <span
-    className="text-2xl md:text-2xl font-semibold text-center
+
+            <div
+              className={`transform transition-all duration-1000 delay-500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
+            >
+              <p className="font-sans text-lg md:text-xl text-slate-300 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed text-center">
+                <span
+                  className="text-2xl md:text-2xl font-semibold text-center
                bg-gradient-to-r from-yellow-400 via-yellow-400 to-yellow-400
                bg-clip-text text-transparent 
                mt-2 animate-gradient-x hover:scale-105 transition-transform duration-700"
-  >
-    Python Developer
-  </span> with 2+ years of building scalable web applications and APIs. 
-    Passionate about solving technical challenges, optimizing performance, and delivering innovative solutions. Self-taught developer.
-  </p>
-</div>
+                >
+                  Python Developer
+                </span> with 2+ years of building scalable web applications and APIs.
+                Passionate about solving technical challenges, optimizing performance, and delivering innovative solutions. Self-taught developer.
+              </p>
+            </div>
 
 
-<div
-  className={`flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 mb-8 
+            <div
+              className={`flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 mb-8 
               transform transition-all duration-1000 delay-700 
               ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
->
-  {/* View My Work - Cyan-Purple Gradient with Glow */}
-  <Button
-    onClick={() => scrollToSection("projects")}
-    size="lg"
-    className="flex items-center bg-gradient-to-r from-cyan-500 to-purple-500 
+            >
+              {/* View My Work - Cyan-Purple Gradient with Glow */}
+              <Button
+                onClick={() => scrollToSection("projects")}
+                size="lg"
+                className="flex items-center bg-gradient-to-r from-cyan-500 to-purple-500 
                hover:from-cyan-400 hover:to-purple-600 
                transform hover:scale-105 transition-all duration-300 
                shadow-lg shadow-cyan-500/30 text-white font-semibold animate-pulse-slow"
-  >
-    <Sparkles className="w-5 h-5 mr-2 animate-spin-slow" />
-    View My Work
-  </Button>
+              >
+                <Sparkles className="w-5 h-5 mr-2 animate-spin-slow" />
+                View My Work
+              </Button>
 
-  {/* Get In Touch - Purple Outline with Fade Background */}
-<Button
-  variant="outline"
-  size="lg"
-  onClick={() => scrollToSection("contact")}
-  className="flex items-center border-pink-500 text-pink-500 
+              {/* Get In Touch - Purple Outline with Fade Background */}
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => scrollToSection("contact")}
+                className="flex items-center border-pink-500 text-pink-500 
              hover:bg-pink-500 hover:text-white 
              transform hover:scale-105 transition-all duration-300 
              bg-transparent font-semibold animate-fade-in"
->
-  {/* Mail/Message Icon */}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-5 w-5 mr-2"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z"
-    />
-  </svg>
+              >
+                {/* Mail/Message Icon */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z"
+                  />
+                </svg>
 
-  Get In Touch
-</Button>
+                Get In Touch
+              </Button>
 
 
-  {/* View Resume - Green Gradient with Slide Animation */}
-<Button
-  variant="outline"
-  size="lg"
-  onClick={() => window.open("/path-to-your-resume.pdf", "_blank")}
-  className="flex items-center border-yellow-400 text-yellow-400 
+              {/* View Resume - Green Gradient with Slide Animation */}
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => window.open("/path-to-your-resume.pdf", "_blank")}
+                className="flex items-center border-yellow-400 text-yellow-400 
              hover:bg-gradient-to-r hover:from-yellow-400 hover:to-teal-400 
              hover:text-black transform hover:scale-105 transition-all duration-300 
              bg-transparent font-semibold animate-gradient-x"
->
-  {/* Download Icon */}
-  <svg
-    className="h-5 w-5 mr-2"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 12v8m0 0l-4-4m4 4l4-4M12 4v8" />
-  </svg>
-
-  View Resume
-</Button>
+              >
+                <FaFileAlt className="w-5 h-5 mr-2" />
+                View Resume
+              </Button>
 
 
-</div>
+            </div>
 
 
             <div
@@ -370,6 +400,7 @@ export default function Portfolio() {
                 href="https://github.com/yogeshGit11"
                 className="text-slate-400 hover:text-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
                 aria-label="GitHub Profile"
+                target="_blank"
               >
                 <Github className="w-6 h-6" />
               </a>
@@ -377,6 +408,7 @@ export default function Portfolio() {
                 href="www.linkedin.com/in/yogesh-chaudhari-29ab70219"
                 className="text-slate-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
                 aria-label="LinkedIn Profile"
+                target="_blank"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
@@ -384,8 +416,18 @@ export default function Portfolio() {
                 href="mailto:ymali2434@gmail.com"
                 className="text-slate-400 hover:text-pink-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
                 aria-label="Email Contact"
+                target="_blank"
               >
                 <Mail className="w-6 h-6" />
+              </a>
+              {/* whatsapp */}
+              <a
+                href="https://wa.me/7083072357"
+                className="text-slate-400 hover:text-green-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
+                aria-label="WhatsApp Contact"
+                target="_blank"
+              >
+                <FaWhatsapp className="w-6 h-6" />
               </a>
             </div>
 
@@ -406,7 +448,7 @@ export default function Portfolio() {
             {experience.map((exp, index) => (
               <Card
                 key={exp.id}
-                className="border-l-4 border-l-cyan-500 bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-slate-600 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-cyan-500/10 animate-slide-in-left"
+                className="border-l-4 border-l-cyan-500 bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-slate-600 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/10 animate-slide-in-left"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <CardHeader>
@@ -459,7 +501,7 @@ export default function Portfolio() {
             {projects.map((project, index) => (
               <Card
                 key={project.id}
-                className="bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-slate-600 transition-all duration-500 transform hover:scale-105 hover:rotate-1 hover:shadow-2xl hover:shadow-purple-500/20 animate-slide-in-up group"
+                className="bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-slate-600 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 animate-slide-in-up group"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <CardHeader>
@@ -488,17 +530,19 @@ export default function Portfolio() {
                     ))}
                   </div>
                   <div className="flex space-x-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      asChild
-                      className="border-slate-600 text-slate-300 hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 bg-transparent"
-                    >
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
+                    {project.githubUrl && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        asChild
+                        className="border-slate-600 text-slate-300 hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 bg-transparent"
+                      >
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
                     {project.liveUrl && (
                       <Button
                         size="sm"
@@ -529,7 +573,7 @@ export default function Portfolio() {
             {Object.entries(skills).map(([category, skillList], index) => (
               <Card
                 key={category}
-                className="bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-slate-600 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/10 animate-slide-in-up group"
+                className="bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-slate-600 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/10 animate-slide-in-up group"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <CardHeader>
@@ -568,7 +612,7 @@ export default function Portfolio() {
             Let’s Build Something Great
           </h2>
           <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-I’m always seeking new challenges and opportunities. Let’s connect and create solutions together!
+            I’m always seeking new challenges and opportunities. Let’s connect and create solutions together!
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
@@ -579,6 +623,16 @@ I’m always seeking new challenges and opportunities. Let’s connect and creat
               <a href="mailto:ymali2434@gmail.com">
                 <Mail className="w-5 h-5 mr-2" />
                 Send Email
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              asChild
+              className="bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-600 hover:to-green-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-pink-500/25"
+            >
+              <a href="https://wa.me/7083072357" target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp className="w-5 h-5 mr-2" />
+                Chat on WhatsApp
               </a>
             </Button>
           </div>

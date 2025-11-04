@@ -247,3 +247,47 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #0891b2, #7c3aed);
 }
+
+
+.typing-loop {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid #ec4899; /* blinking cursor */
+  width: 0;
+  animation: typingLoop 6s steps(27) infinite, step-end infinite;
+}
+
+/* Typing and deleting effect */
+@keyframes typingLoop {
+  0%, 5% { width: 0; }      /* start hidden */
+  45%, 50% { width: 15ch; } /* typing happens from 5% → 45%, pause 45% → 50% */
+  95%, 100% { width: 0; }   /* deleting happens from 50% → 95%, pause 95% → 100% */
+}
+
+
+
+.code-shimmer-delay {
+  display: inline-block;
+  background: linear-gradient(90deg, #dfed1d, #f94886, #d49d06);
+  background-clip: text;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-size: 25px;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: shimmerDelay 1.5s linear 1s infinite, fadeScaleDelay 1.5s ease 2s infinite;
+}
+
+/* Gradient shimmer */
+@keyframes shimmerDelay {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Fade + scale */
+@keyframes fadeScaleDelay {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+

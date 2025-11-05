@@ -4,8 +4,10 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    unoptimized: true, // Keeps your images unoptimized
   },
+  output: 'export', // Enable static export
+  reactStrictMode: true, // Optional: Keeps React in strict mode
 }
 
 export default nextConfig

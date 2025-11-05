@@ -283,7 +283,7 @@ export default function Portfolio() {
                 {/* Inner profile image container */}
                 <div className="absolute inset-[6px] bg-white dark:bg-gray-900 rounded-full overflow-hidden flex items-center justify-center shadow-2xl shadow-purple-500/25 animate-float">
                   <img
-                    src="/ypc.jpeg"
+                    src="/yogesh-portfolio/ypc.jpeg"
                     alt="Yogesh Chaudhari - Python Developer"
                     className="w-full h-full object-cover rounded-full border-4 border-white animate-pulse-slow"
                   />

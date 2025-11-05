@@ -4,10 +4,13 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true, // Keeps your images unoptimized
+    unoptimized: true,
   },
-  output: 'export', // Enable static export
-  reactStrictMode: true, // Optional: Keeps React in strict mode
-}
+  output: 'export',
+  reactStrictMode: true,
 
+  // 👇 Add these two lines:
+  basePath: '/yogesh-portfolio',
+  assetPrefix: '/yogesh-portfolio/',
+}
 export default nextConfig

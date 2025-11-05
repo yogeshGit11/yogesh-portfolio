@@ -67,7 +67,7 @@ export default function Portfolio() {
       title: "AI Prompt Review Project(Turing)",
       description:
         "Evaluated and enhanced AI-generated Python code and responses to improve model performance at Turing. Responsibilities included annotating and evaluating AI-generated code related to APIs, automation scripts, and data workflows; reviewing model outputs for correctness, scalability, readability, and adherence to Pythonic best practices; assessing prompts and responses involving frameworks, libraries, and software architecture; providing structured feedback to improve model understanding of modern Python development practices; and identifying inaccuracies, bugs, and performance issues in AI-generated code while suggesting optimizations.",
-      technologies: ["Python", "AI Evaluation", "Prompt Engineering", "Data Analysis"],
+      technologies: ["Python", "AI Evaluation", "Prompt Engineering"],
       featured: true,
     },
     {
@@ -405,7 +405,7 @@ export default function Portfolio() {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="www.linkedin.com/in/yogesh-chaudhari-29ab70219"
+                href="https://www.linkedin.com/in/yogesh-chaudhari-29ab70219/"
                 className="text-slate-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
                 aria-label="LinkedIn Profile"
                 target="_blank"

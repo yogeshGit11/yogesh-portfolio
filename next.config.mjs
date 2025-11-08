@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
@@ -9,8 +11,8 @@ const nextConfig = {
   output: 'export',
   reactStrictMode: true,
 
-  // 👇 Add these two lines:
-  basePath: '/yogesh-portfolio',
-  assetPrefix: '/yogesh-portfolio/',
+  basePath: isProd ? '/yogesh-portfolio' : '',
+  assetPrefix: isProd ? '/yogesh-portfolio/' : '',
 }
+
 export default nextConfig

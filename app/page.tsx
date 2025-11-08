@@ -64,7 +64,7 @@ export default function Portfolio() {
     },
     {
       id: 2,
-      title: "AI Prompt Review Project(Turing)",
+      title: "AI Code Evaluation and Optimization (Turing)",
       description:
         "Evaluated and enhanced AI-generated Python code and responses to improve model performance at Turing. Responsibilities included annotating and evaluating AI-generated code related to APIs, automation scripts, and data workflows; reviewing model outputs for correctness, scalability, readability, and adherence to Pythonic best practices; assessing prompts and responses involving frameworks, libraries, and software architecture; providing structured feedback to improve model understanding of modern Python development practices; and identifying inaccuracies, bugs, and performance issues in AI-generated code while suggesting optimizations.",
       technologies: ["Python", "AI Evaluation", "Prompt Engineering"],
@@ -262,7 +262,7 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section id="about" className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative">
+      <section id="about" className="pt-10 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center py-20">
             {/* <div
@@ -276,19 +276,26 @@ export default function Portfolio() {
               className={`mb-12 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
             >
-              <div className="relative w-68 h-64 mx-auto mb-6">
-                {/* Gradient rotating ring */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-full animate-spin-slow"></div>
+              <div className="relative w-55 h-64 mx-auto mb-4">
+                {/* Floating gradient background */}
+                <div className="absolute inset-9 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-sm animate-float-slow"></div>
 
-                {/* Inner profile image container */}
-                <div className="absolute inset-[6px] bg-white dark:bg-gray-900 rounded-full overflow-hidden flex items-center justify-center shadow-2xl shadow-purple-500/25 animate-float">
+                {/* Image container */}
+                <div className="absolute  bg-red dark:bg-gray-900 overflow-hidden rounded-lg shadow-2xl shadow-purple-500/25 flex items-center justify-center">
                   <img
-                    src="/yogesh-portfolio/ypc.jpeg"
+                    src="/porfolio.jpg"          // High-res JPEG ≥ 2× container size
                     alt="Yogesh Chaudhari - Python Developer"
-                    className="w-full h-full object-cover rounded-full border-4 border-white animate-pulse-slow"
+                    className="w-full h-full object-contain animate-pulse-clear"
+                    loading="eager"
                   />
                 </div>
               </div>
+
+
+
+
+
+
             </div>
 
             <div
@@ -345,17 +352,54 @@ export default function Portfolio() {
                 View My Work
               </Button>
 
-              {/* Get In Touch - Purple Outline with Fade Background */}
+              <Button
+                size="lg"
+                className="flex items-center bg-black text-white 
+    hover:bg-gray-900 hover:scale-105 transition-all duration-300 
+    rounded-lg px-6 py-4 font-semibold shadow-lg"
+              >
+                <a
+                  href="https://github.com/yogeshGit11"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative flex items-center justify-center"
+                >
+                  <Github className="w-6 h-6 mr-2" />
+                  Visit GitHub
+                </a>
+              </Button>
+
+
+
+
+
+              {/* View Resume - Green Gradient with Slide Animation */}
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => scrollToSection("contact")}
-                className="flex items-center border-pink-500 text-pink-500 
-             hover:bg-pink-500 hover:text-white 
-             transform hover:scale-105 transition-all duration-300 
-             bg-transparent font-semibold animate-fade-in"
+                onClick={() => window.open("/Yogesh Chaudhari Resume.pdf", "_blank")}
+                className="flex items-center border-yellow-400 text-yellow-400 
+             hover:bg-gradient-to-r hover:from-yellow-400 hover:to-teal-400 
+             hover:text-black transform hover:scale-105 transition-all duration-300 
+             bg-transparent font-semibold animate-gradient-x"
               >
-                {/* Mail/Message Icon */}
+                <FaFileAlt className="w-5 h-5 mr-2" />
+                View Resume
+              </Button>
+            </div>
+
+            <Button
+              size="xl"
+              onClick={() => scrollToSection("contact")}
+              className="relative overflow-hidden text-white text-lg px-6 py-4 rounded-lg
+    transform hover:scale-110 transition-all duration-300
+    shadow-xl hover:shadow-purple-500/40"
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-orange-700 via-pink-600 to-yellow-600
+    animate-gradient-move opacity-70"
+              />
+
+              <span className="relative z-10 flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 mr-2"
@@ -370,30 +414,12 @@ export default function Portfolio() {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z"
                   />
                 </svg>
-
                 Get In Touch
-              </Button>
+              </span>
+            </Button>
 
 
-              {/* View Resume - Green Gradient with Slide Animation */}
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => window.open("/path-to-your-resume.pdf", "_blank")}
-                className="flex items-center border-yellow-400 text-yellow-400 
-             hover:bg-gradient-to-r hover:from-yellow-400 hover:to-teal-400 
-             hover:text-black transform hover:scale-105 transition-all duration-300 
-             bg-transparent font-semibold animate-gradient-x"
-              >
-                <FaFileAlt className="w-5 h-5 mr-2" />
-                View Resume
-              </Button>
-
-
-            </div>
-
-
-            <div
+            {/* <div
               className={`flex justify-center space-x-6 transform transition-all duration-1000 delay-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
             >
               <a
@@ -420,7 +446,6 @@ export default function Portfolio() {
               >
                 <Mail className="w-6 h-6" />
               </a>
-              {/* whatsapp */}
               <a
                 href="https://wa.me/7083072357"
                 className="text-slate-400 hover:text-green-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
@@ -429,11 +454,8 @@ export default function Portfolio() {
               >
                 <FaWhatsapp className="w-6 h-6" />
               </a>
-            </div>
+            </div> */}
 
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-              <ArrowDown className="w-6 h-6 text-purple-400" />
-            </div>
           </div>
         </div>
       </section>
@@ -635,6 +657,21 @@ export default function Portfolio() {
                 Chat on WhatsApp
               </a>
             </Button>
+            <Button
+              size="lg"
+              asChild
+              className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
+            >
+              <a
+                href="https://www.linkedin.com/in/yogesh-chaudhari-29ab70219/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="w-5 h-5 mr-2" />
+                Connect on LinkedIn
+              </a>
+            </Button>
+
           </div>
         </div>
       </section>

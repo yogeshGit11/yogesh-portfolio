@@ -291,3 +291,88 @@ html {
   100% { opacity: 1; transform: scale(1); }
 }
 
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* ===== Smooth floating background ===== */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+/* ===== Floating background animation ===== */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* ===== Floating background animation ===== */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* ===== Smooth, subtle pulse ===== */
+@keyframes pulse-clear {
+  0%, 100% { transform: scale(1.2); }
+  50% { transform: scale(1.15); } /* small zoom to avoid JPEG blur */
+}
+
+.animate-pulse-clear {
+  animation: pulse-clear 2.5s ease-in-out infinite;
+  backface-visibility: hidden;    /* prevents subpixel blur */
+  transform: translateZ(0);       /* GPU acceleration */
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+}
+
+/* ===== General image rules for sharp scaling ===== */
+img {
+  object-fit: contain;            /* keeps aspect ratio, prevents stretching */
+  width: 150%;
+  height: 100%;
+  backface-visibility: hidden;    /* GPU acceleration */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optional: smooth transitions (if needed for hover or future effects) */
+img,
+.animate-pulse-clear {
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+@keyframes gradient-move {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-move {
+  background-size: 200% 200%;
+  animation: gradient-move 2s linear infinite;
+}
+

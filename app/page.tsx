@@ -283,7 +283,7 @@ export default function Portfolio() {
                 {/* Image container */}
                 <div className="absolute  bg-red dark:bg-gray-900 overflow-hidden rounded-lg shadow-2xl shadow-purple-500/25 flex items-center justify-center">
                   <img
-                    src="/porfolio.jpg"          // High-res JPEG ≥ 2× container size
+                    src="/yogesh-portfolio/porfolio.jpg"          // High-res JPEG ≥ 2× container size
                     alt="Yogesh Chaudhari - Python Developer"
                     className="w-full h-full object-contain animate-pulse-clear"
                     loading="eager"
@@ -377,7 +377,7 @@ export default function Portfolio() {
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => window.open("/Yogesh Chaudhari Resume.pdf", "_blank")}
+                onClick={() => window.open("/yogesh-portfolio/Yogesh Chaudhari Resume.pdf", "_blank")}
                 className="flex items-center border-yellow-400 text-yellow-400 
              hover:bg-gradient-to-r hover:from-yellow-400 hover:to-teal-400 
              hover:text-black transform hover:scale-105 transition-all duration-300 

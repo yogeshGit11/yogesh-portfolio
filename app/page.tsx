@@ -28,6 +28,7 @@ interface Project {
   githubUrl?: string
   liveUrl?: string
   featured: boolean
+  selfmade: boolean
 }
 
 interface Experience {
@@ -61,6 +62,7 @@ export default function Portfolio() {
         "Bastion Server"
       ],
       featured: true,
+      selfmade: false,
     },
     {
       id: 2,
@@ -69,6 +71,7 @@ export default function Portfolio() {
         "Evaluated and enhanced AI-generated Python code and responses to improve model performance at Turing. Responsibilities included annotating and evaluating AI-generated code related to APIs, automation scripts, and data workflows; reviewing model outputs for correctness, scalability, readability, and adherence to Pythonic best practices; assessing prompts and responses involving frameworks, libraries, and software architecture; providing structured feedback to improve model understanding of modern Python development practices; and identifying inaccuracies, bugs, and performance issues in AI-generated code while suggesting optimizations.",
       technologies: ["Python", "AI Evaluation", "Prompt Engineering"],
       featured: true,
+      selfmade: false,
     },
     {
       id: 3,
@@ -93,7 +96,44 @@ export default function Portfolio() {
 
       githubUrl: "https://github.com/yogeshGit11/HrithikMania",
       featured: false,
+      selfmade: true,
     },
+    {
+      id: 4,
+      title: "RestaurantPro-Fullstack-Ops",
+      description:
+        "RestaurantPro is a full-stack restaurant management system designed to handle real-world restaurant operations with a production-grade architecture. The system uses React for the frontend, Django REST Framework for the backend, PostgreSQL as the database, and leverages Docker and Kubernetes for containerization and deployment.",
+      technologies: [
+        "React.js",
+        "Django REST Framework (DRF)",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes (Minikube)",
+        "Jenkins CI/CD",
+      ],
+      githubUrl: "https://github.com/yogeshGit11/RestaurantPro-Fullstack-Ops",
+      featured: false,
+      selfmade: true,
+    },
+    {
+      id: 5,
+      title: "ML-Powered-Patient-Condition-Forecasting",
+      description:
+        "HealthPredictAPI is a FastAPI-based machine learning service that predicts a patient’s medical condition based on demographic, billing, and medical parameters. It returns both the predicted disease and the probability score.",
+      technologies: [
+          "Python",
+          "FastAPI",
+          "Pandas",
+          "scikit-learn",
+          "RandomForest Classifier",
+          "Pydantic",
+          "Docker"
+      ],
+      githubUrl: "https://github.com/yogeshGit11/ML-Powered-Patient-Condition-Forecasting",
+      featured: false,
+      selfmade: true,
+    }
+
   ]
 
   const experience: Experience[] = [
@@ -418,44 +458,6 @@ export default function Portfolio() {
               </span>
             </Button>
 
-
-            {/* <div
-              className={`flex justify-center space-x-6 transform transition-all duration-1000 delay-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            >
-              <a
-                href="https://github.com/yogeshGit11"
-                className="text-slate-400 hover:text-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
-                aria-label="GitHub Profile"
-                target="_blank"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/yogesh-chaudhari-29ab70219/"
-                className="text-slate-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
-                aria-label="LinkedIn Profile"
-                target="_blank"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="mailto:ymali2434@gmail.com"
-                className="text-slate-400 hover:text-pink-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
-                aria-label="Email Contact"
-                target="_blank"
-              >
-                <Mail className="w-6 h-6" />
-              </a>
-              <a
-                href="https://wa.me/7083072357"
-                className="text-slate-400 hover:text-green-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
-                aria-label="WhatsApp Contact"
-                target="_blank"
-              >
-                <FaWhatsapp className="w-6 h-6" />
-              </a>
-            </div> */}
-
           </div>
         </div>
       </section>
@@ -517,7 +519,7 @@ export default function Portfolio() {
       <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-12">
-            Featured Projects
+            Projects
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
@@ -532,7 +534,10 @@ export default function Portfolio() {
                       {project.title}
                     </CardTitle>
                     {project.featured && (
-                      <Badge className="bg-gradient-to-r from-cyan-500 to-purple-600 animate-pulse">Featured</Badge>
+                      <Badge className="bg-gradient-to-r from-green-500 to-teal-600 animate-pulse"><strong>Corporate</strong></Badge>
+                    )}
+                    {project.selfmade && (
+                      <Badge className="bg-gradient-to-r from-pink-500 to-yellow-600 animate-pulse"><strong>Self-Made</strong></Badge>
                     )}
                   </div>
                   <CardDescription className="text-slate-300 group-hover:text-slate-200 transition-colors duration-300">

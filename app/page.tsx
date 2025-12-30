@@ -40,6 +40,13 @@ interface Experience {
   technologies: string[]
 }
 
+interface Certification {
+  id: number;
+  title: string;
+  issuer: string;
+  url: string;
+}
+
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about")
   const [isVisible, setIsVisible] = useState(false)
@@ -184,6 +191,45 @@ export default function Portfolio() {
     },
   ]
 
+  const certifications: Certification[] = [
+    {
+      id: 1,
+      title: "Python Programing",
+      issuer: "Udemy",
+      url: "https://www.udemy.com/certificate/UC-1e440cb8-8357-432d-853e-271fb44c2707/",
+    },
+    {
+      id: 2,
+      title: "Foundations of Programming in JavaScript",
+      issuer: "Udemy",
+      url: "https://www.udemy.com/certificate/UC-8fae5aed-0a25-4cfb-a62b-b8dad399d6d6/",
+    },
+    {
+      id: 3,
+      title: "SQL(Intermediate)",
+      issuer: "Hackerrank",
+      url: "https://www.hackerrank.com/certificates/74e7fee9c20e",
+    },
+    {
+      id: 4,
+      title: "FastAPI Full-Stack Development",
+      issuer: "Udemy",
+      url: "https://www.udemy.com/certificate/UC-a890b0b8-17fa-4675-a427-94f5a29c84b8/",
+    },
+    {
+      id: 5,
+      title: "DevOps Essentials",
+      issuer: "Simplilearn",
+      url: "https://certificates.simplicdn.net/share/9645913_9909856_1766840130430.pdf",
+    },
+    {
+      id: 6,
+      title: "Fundamentals of Docker and Kubernetes",
+      issuer: "Scaler",
+      url: "https://moonshot.scaler.com/s/sl/9_XjOBn5E-",
+    },
+  ];
+
   const skills: Record<string, string[]> = {
     "Programming Languages": ["Python", "JavaScript", "SQL"],
     "Front-End Development": ["HTML", "CSS", "Bootstrap", "React"],
@@ -267,7 +313,7 @@ export default function Portfolio() {
             </button>
 
             <div className="hidden md:flex space-x-8">
-              {["about", "experience", "projects", "skills", "contact"].map((section) => (
+              {["about", "experience", "projects", "skills","Certifications","contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -305,13 +351,6 @@ export default function Portfolio() {
       <section id="about" className="pt-10 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center py-20">
-            {/* <div
-                className={`mb-8 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-              >
-                <div className="w-32 h-32 mx-auto bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-6 animate-spin-slow shadow-2xl shadow-purple-500/25">
-                  <Code className="w-16 h-16 text-white animate-pulse" />
-                </div>
-              </div> */}
             <div
               className={`mb-12 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
@@ -368,7 +407,7 @@ export default function Portfolio() {
                mt-2 animate-gradient-x hover:scale-105 transition-transform duration-700"
                 >
                   Python Developer
-                </span> with 2+ years of building scalable web applications and APIs.
+                </span> with 2 years of building scalable web applications and APIs.
                 Passionate about solving technical challenges, optimizing performance, and delivering innovative solutions. Self-taught developer.
               </p>
             </div>
@@ -429,14 +468,15 @@ export default function Portfolio() {
             </div>
 
             <Button
-              size="xl"
+              size="lg"
               onClick={() => scrollToSection("contact")}
               className="relative overflow-hidden text-white text-lg px-6 py-4 rounded-lg
     transform hover:scale-110 transition-all duration-300
     shadow-xl hover:shadow-purple-500/40"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-orange-700 via-pink-600 to-yellow-600
-    animate-gradient-move opacity-70"
+              <span className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 to-orange-400
+animate-gradient-move opacity-80 hover:opacity-100 transition-all duration-300 ease-in-out 
+shadow-lg rounded-xl transform hover:scale-105"
               />
 
               <span className="relative z-10 flex items-center">
@@ -632,15 +672,34 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Certification Section */}
+      <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900/70 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-8">
+            Certifications
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {certifications.map(cert => (
+              <Card key={cert.id} className="bg-slate-800/60 border-slate-700 hover:border-green-400 transition-all duration-300 hover:shadow-2xl animate-fade-in">
+                <CardHeader>
+                  <CardTitle className="text-lg text-white">{cert.title}</CardTitle>
+                  <CardDescription className="text-green-300">{cert.issuer}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <a href={cert.url} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">View Certificate</a>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent mb-8">
-            Let’s Build Something Great
+            Let’s Connect
           </h2>
-          <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-            I’m always seeking new challenges and opportunities. Let’s connect and create solutions together!
-          </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
               size="lg"

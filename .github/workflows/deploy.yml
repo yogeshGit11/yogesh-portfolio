@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+      
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -17,6 +20,6 @@ jobs:
       - run: pnpm build
       - uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.PAT_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           publish_branch: gh-pages

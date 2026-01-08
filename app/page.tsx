@@ -245,7 +245,7 @@ export default function Portfolio() {
     setIsVisible(true)
 
     const handleScroll = () => {
-      const sections = ["about", "experience", "projects", "skills", "contact"]
+      const sections = ["about", "experience", "projects", "skills", "certifications", "contact"]
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -313,7 +313,7 @@ export default function Portfolio() {
             </button>
 
             <div className="hidden md:flex space-x-8">
-              {["about", "experience", "projects", "skills","Certifications","contact"].map((section) => (
+              {["about", "experience", "projects", "skills", "certifications", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -332,7 +332,7 @@ export default function Portfolio() {
           {/* Mobile menu */}
           <div className={`md:hidden ${mobileOpen ? "block" : "hidden"} px-4 pb-4`}>
             <div className="flex flex-col space-y-2">
-              {["about", "experience", "projects", "skills", "contact"].map((section) => (
+              {["about", "experience", "projects", "skills", "certifications", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => { setMobileOpen(false); scrollToSection(section); }}
@@ -362,7 +362,7 @@ export default function Portfolio() {
                 {/* Image container */}
                 <div className="absolute  bg-red dark:bg-gray-900 overflow-hidden rounded-lg shadow-2xl shadow-purple-500/25 flex items-center justify-center">
                   <img
-                    src="/yogesh-portfolio/porfolio.jpg"          // High-res JPEG ≥ 2× container size
+                    src="/porfolio.png"          // High-res JPEG ≥ 2× container size
                     alt="Yogesh Chaudhari - Python Developer"
                     className="w-full h-full object-contain animate-pulse-clear"
                     loading="eager"
@@ -474,9 +474,8 @@ export default function Portfolio() {
     transform hover:scale-110 transition-all duration-300
     shadow-xl hover:shadow-purple-500/40"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 to-orange-400
-animate-gradient-move opacity-80 hover:opacity-100 transition-all duration-300 ease-in-out 
-shadow-lg rounded-xl transform hover:scale-105"
+              <span className="absolute inset-0 bg-gradient-to-r from-orange-700 via-pink-600 to-yellow-600
+    animate-gradient-move opacity-70"
               />
 
               <span className="relative z-10 flex items-center">
@@ -674,11 +673,11 @@ shadow-lg rounded-xl transform hover:scale-105"
 
       {/* Certification Section */}
       <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900/70 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-8">
             Certifications
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {certifications.map(cert => (
               <Card key={cert.id} className="bg-slate-800/60 border-slate-700 hover:border-green-400 transition-all duration-300 hover:shadow-2xl animate-fade-in">
                 <CardHeader>
@@ -698,8 +697,11 @@ shadow-lg rounded-xl transform hover:scale-105"
       <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent mb-8">
-            Let’s Connect
+            Let’s Build Something Great
           </h2>
+          <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+            I’m always seeking new challenges and opportunities. Let’s connect and create solutions together!
+          </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
               size="lg"

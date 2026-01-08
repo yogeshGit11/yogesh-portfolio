@@ -362,7 +362,7 @@ export default function Portfolio() {
                 {/* Image container */}
                 <div className="absolute  bg-red dark:bg-gray-900 overflow-hidden rounded-lg shadow-2xl shadow-purple-500/25 flex items-center justify-center">
                   <img
-                    src="/porfolio.png"          // High-res JPEG ≥ 2× container size
+                    src="/yogesh-portfolio/porfolio.png"
                     alt="Yogesh Chaudhari - Python Developer"
                     className="w-full h-full object-contain animate-pulse-clear"
                     loading="eager"

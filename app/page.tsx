@@ -228,6 +228,12 @@ export default function Portfolio() {
       issuer: "Scaler",
       url: "https://moonshot.scaler.com/s/sl/9_XjOBn5E-",
     },
+    {
+      id: 7,
+      title: "Fundamentals of Communication",
+      issuer: "UpGrad",
+      url: "https://certificates.upgrad.com/aa33d6fb-c1a2-43f6-b603-8cc1d0da7e64-Free%20Course%20Completion-j2svLk7n8IgmWyAG.jpeg",
+    }
   ];
 
   const skills: Record<string, string[]> = {
@@ -673,12 +679,12 @@ export default function Portfolio() {
 
       {/* Certification Section */}
       <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900/70 backdrop-blur-sm">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center"> {/* Changed from max-w-4xl to max-w-6xl */}
           <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-8">
             Certifications
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {certifications.map(cert => (
+          <div className="grid md:grid-cols-3 gap-8">
+            {[...certifications].reverse().map(cert => (
               <Card key={cert.id} className="bg-slate-800/60 border-slate-700 hover:border-green-400 transition-all duration-300 hover:shadow-2xl animate-fade-in">
                 <CardHeader>
                   <CardTitle className="text-lg text-white">{cert.title}</CardTitle>

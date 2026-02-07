@@ -233,6 +233,12 @@ export default function Portfolio() {
       title: "Fundamentals of Communication",
       issuer: "UpGrad",
       url: "https://certificates.upgrad.com/aa33d6fb-c1a2-43f6-b603-8cc1d0da7e64-Free%20Course%20Completion-j2svLk7n8IgmWyAG.jpeg",
+    },
+    {
+      id: 8,
+      title: "ReactJS Foundations",
+      issuer: "ScholarHat",
+      url: "https://drive.google.com/file/d/13UY-9irQPbylxSflXOQGlQkkSVcsteeE/view",
     }
   ];
 

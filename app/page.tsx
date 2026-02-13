@@ -56,8 +56,8 @@ export default function Portfolio() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Xogolign(Worxogo)",
-      description: "Xopologin is a tool that helps companies track and improve how employees perform. It makes work more engaging by using games, feedback, and analytics. I worked as a Senior Backend Developer and built the main backend system using Python. I created APIs to connect different parts of the system, helped track user performance through KPIs, added feedback and noticeboard features, and built tools for admins to manage users and teams. I also made sure the system was secure and customizable for different clients.",
+      title: "AI-powered Nudge Coach (Worxogo)",
+      description: "AI-powered Nudge Coach is a tool that helps companies track and improve how employees perform. It makes work more engaging by using games, feedback, and analytics. I worked as a Senior Backend Developer and built the main backend system using Python. I created APIs to connect different parts of the system, helped track user performance through KPIs, added feedback and noticeboard features, and built tools for admins to manage users and teams. I also made sure the system was secure and customizable for different clients.",
       technologies: [
         "Python",
         "Django",
@@ -128,13 +128,13 @@ export default function Portfolio() {
       description:
         "HealthPredictAPI is a FastAPI-based machine learning service that predicts a patient’s medical condition based on demographic, billing, and medical parameters. It returns both the predicted disease and the probability score.",
       technologies: [
-          "Python",
-          "FastAPI",
-          "Pandas",
-          "scikit-learn",
-          "RandomForest Classifier",
-          "Pydantic",
-          "Docker"
+        "Python",
+        "FastAPI",
+        "Pandas",
+        "scikit-learn",
+        "RandomForest Classifier",
+        "Pydantic",
+        "Docker"
       ],
       githubUrl: "https://github.com/yogeshGit11/ML-Powered-Patient-Condition-Forecasting",
       featured: false,
@@ -147,7 +147,7 @@ export default function Portfolio() {
     {
       id: 1,
       company: "KOLI Infotech Pvt. Ltd.",
-      position: "Backend Developer",
+      position: "Python Developer",
       duration: "2024 - Present",
       description: [
         "Built the main backend system for Xopologin, creating APIs, tracking KPIs, implementing feedback and noticeboard features, and providing admin management tools while ensuring security and client-specific customizations.",
@@ -307,10 +307,24 @@ export default function Portfolio() {
       <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md border-b border-purple-500/20 z-40">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="text-xl font-bold text-center">
-              <span className="code-shimmer-delay">
-                {"<Yogesh Chaudhari />"}
-              </span>
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-16 h-10
+                  flex items-center justify-center overflow-hidden shrink-0
+                  rounded-md
+                  hover:shadow-lg hover:shadow-cyan-400/40">
+                  <img
+                    src="/yogesh-portfolio/logo.png"
+                    alt="YPC logo"
+                    className="w-full h-full object-contain pulse-zoom hover:scale-110"
+                  />
+                </div>
+              </div>
+              <div className="text-xl font-bold text-center">
+                <span className="code-shimmer-delay">
+                  {"<Yogesh Chaudhari />"}
+                </span>
+              </div>
             </div>
 
 
@@ -419,7 +433,7 @@ export default function Portfolio() {
                mt-2 animate-gradient-x hover:scale-105 transition-transform duration-700"
                 >
                   Python Developer
-                </span> with 2 years of building scalable web applications and APIs.
+                </span> with ~2 years of building scalable web applications and APIs.
                 Passionate about solving technical challenges, optimizing performance, and delivering innovative solutions. Self-taught developer.
               </p>
             </div>
@@ -611,13 +625,12 @@ export default function Portfolio() {
                     {project.githubUrl && (
                       <Button
                         variant="outline"
-                        size="sm"
+                        size="lg"
                         asChild
                         className="border-slate-600 text-slate-300 hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 bg-transparent"
                       >
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="w-4 h-4 mr-2" />
-                          Code
+                          <Github className="w-6 h-6 " />
                         </a>
                       </Button>
                     )}
@@ -705,15 +718,15 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Language section */}
+
+
       {/* Contact Section */}
       <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent mb-8">
-            Let’s Build Something Great
+            Let’s Connect
           </h2>
-          <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-            I’m always seeking new challenges and opportunities. Let’s connect and create solutions together!
-          </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
               size="lg"
@@ -758,7 +771,7 @@ export default function Portfolio() {
       <footer className="bg-slate-900/80 backdrop-blur-sm border-t border-purple-500/20 text-slate-300 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <p className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            &copy; 2025 Yogesh Chaudhari. Open to new opportunities
+            &copy; 2026 Yogesh Chaudhari. Open to new opportunities
           </p>
         </div>
       </footer>

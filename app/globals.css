@@ -376,3 +376,13 @@ img,
   animation: gradient-move 2s linear infinite;
 }
 
+@keyframes pulseZoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.pulse-zoom {
+  animation: pulseZoom 1s ease-in-out infinite;
+  transition: transform 0.5s ease-out;
+}
+

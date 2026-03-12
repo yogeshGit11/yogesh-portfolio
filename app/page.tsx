@@ -339,17 +339,15 @@ export default function Portfolio() {
             </button>
 
             <div className="hidden md:flex space-x-8">
-              {["about", "experience", "projects", "skills", "certifications", "contact"].map((section) => (
+              {["about", "experience", "projects", "skills", "education", "certifications", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`capitalize transition-all duration-300 relative group ${activeSection === section ? "text-cyan-400 font-medium" : "text-slate-300 hover:text-white"
-                    }`}
+                  className={`capitalize font-bold text-md transition-all duration-300 relative group ${activeSection === section ? "text-cyan-400" : "text-slate-300 hover:text-white"}`}
                 >
                   {section}
                   <span
-                    className={`absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transform transition-transform duration-300 ${activeSection === section ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                      }`}
+                    className={`absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transform transition-transform duration-300 ${activeSection === section ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
                   ></span>
                 </button>
               ))}
@@ -358,12 +356,11 @@ export default function Portfolio() {
           {/* Mobile menu */}
           <div className={`md:hidden ${mobileOpen ? "block" : "hidden"} px-4 pb-4`}>
             <div className="flex flex-col space-y-2">
-              {["about", "experience", "projects", "skills", "certifications", "contact"].map((section) => (
+              {["about", "experience", "projects", "skills", "education", "certifications", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => { setMobileOpen(false); scrollToSection(section); }}
-                  className={`w-full text-left py-2 px-2 rounded ${activeSection === section ? "text-cyan-400 font-medium" : "text-slate-300 hover:text-white"
-                    }`}
+                  className={`w-full text-left py-2 px-2 rounded font-bold text-sm ${activeSection === section ? "text-cyan-400" : "text-slate-300 hover:text-white"}`}
                 >
                   {section}
                 </button>
@@ -692,6 +689,32 @@ export default function Portfolio() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900/80 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto text-center"> {/* Increased from max-w-6xl to max-w-7xl */}
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent mb-8">
+            Education
+          </h2>
+          <div className="flex flex-col items-center justify-center gap-4">
+            <div className="bg-slate-800/70 border border-gray-400 rounded-lg shadow-lg p-8 w-full max-w-4xl animate-fade-in"> {/* Increased max-w-3xl to max-w-4xl */}
+              <h3 className="text-2xl font-semibold text-white mb-2">
+                <a href="https://www.rcpimrd.ac.in/integrated-mca" target="_blank" rel="noopener noreferrer" className="hover:underline text-yellow-300">
+                  Integrated MCA (Dual Degree MCA)
+                </a>
+              </h3>
+              <p className="text-lg text-slate-300 mb-1">
+                <a href="https://rcpimrd.ac.in/" target="_blank" rel="noopener noreferrer" className="hover:underline text-green-300">
+                  R. C. Patel Educational Trust's Institute of Management Research and Development, Shirpur
+                </a>
+              </p>
+              <p className="text-md mb-1 text-white">Kavayitri Bahinabai Chaudhari North Maharashtra University(NMU), Jalgaon</p>
+              <p className="text-md mb-1 text-white">2018 – 2023</p>
+              <p className="text-md text-green-300 font-medium">CGPA: 9.44 / 10</p>
+            </div>
           </div>
         </div>
       </section>

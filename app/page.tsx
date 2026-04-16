@@ -430,7 +430,7 @@ export default function Portfolio() {
                mt-2 animate-gradient-x hover:scale-105 transition-transform duration-700"
                 >
                   Python Developer
-                </span> with ~2 years of building scalable web applications and APIs.
+                </span> with 2+ years of building scalable web applications and APIs.
                 Passionate about solving technical challenges, optimizing performance, and delivering innovative solutions. Self-taught developer.
               </p>
             </div>

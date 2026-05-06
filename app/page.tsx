@@ -248,9 +248,9 @@ export default function Portfolio() {
     "Web Frameworks": ["Django", "FastAPI", "Flask"],
     Databases: ["PostgreSQL", "MongoDB", "Redis", "MySQL"],
     "Version Control": ["Git", "GitHub", "GitLab"],
-    "Cloud & Infrastructure": ["AWS", "Linux", "Terraform", "Ansible"],
+    "Cloud & Infrastructure": ["AWS", "Linux"],
     Containerization: ["Docker", "Kubernetes"],
-    "Development Practices": ["REST APIs", "GraphQL", "Microservices", "CI/CD", "Testing", "Postman"],
+    "Development Practices": ["REST APIs", "Microservices", "CI/CD", "Testing", "Postman"],
   }
 
   useEffect(() => {
@@ -475,7 +475,7 @@ export default function Portfolio() {
 
 
 
-              {/* View Resume - Green Gradient with Slide Animation */}
+              {/* View Resume - Green Gradient with Slide Animation }
               <Button
                 variant="outline"
                 size="lg"
@@ -489,6 +489,7 @@ export default function Portfolio() {
                 View Resume
               </Button>
             </div>
+	   */}
 
             <Button
               size="lg"

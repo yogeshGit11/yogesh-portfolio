@@ -392,86 +392,81 @@ export default function Portfolio() {
                   />
                 </div>
               </div>
-
-
-
-
-
-
             </div>
+          </div>
 
-            <div
-              className={`transform transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                }`}
-            >
-              <h1 className="text-4xl md:text-5xl font-bold text-center 
+          <div
+            className={`transform transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              }`}
+          >
+            <h1 className="text-4xl md:text-5xl font-bold text-center 
                  bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 
                  bg-clip-text text-transparent 
                  mb-5
                  typing-loop">
-                Hello! I’m Yogesh
-              </h1>
-            </div>
+              Hello! I’m Yogesh
+            </h1>
+          </div>
 
 
 
 
 
 
-            <div
-              className={`transform transition-all duration-1000 delay-500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                }`}
-            >
-              <p className="font-sans text-lg md:text-xl text-slate-300 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed text-center">
-                <span
-                  className="text-2xl md:text-2xl font-semibold text-center
+          <div
+            className={`transform transition-all duration-1000 delay-500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              }`}
+          >
+            <p className="font-sans text-lg md:text-xl text-slate-300 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed text-center">
+              <span
+                className="text-2xl md:text-2xl font-semibold text-center
                bg-gradient-to-r from-yellow-400 via-yellow-400 to-yellow-400
                bg-clip-text text-transparent 
                mt-2 animate-gradient-x hover:scale-105 transition-transform duration-700"
-                >
-                  Python Developer
-                </span> with 2+ years of building scalable web applications and APIs.
-                Passionate about solving technical challenges, optimizing performance, and delivering innovative solutions. Self-taught developer.
-              </p>
-            </div>
+              >
+                Python Developer
+              </span> with 2+ years of building scalable web applications and APIs.
+              Passionate about solving technical challenges, optimizing performance, and delivering innovative solutions. Self-taught developer.
+            </p>
+          </div>
 
 
-            <div
-              className={`flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 mb-8 
+          <div
+            className={`flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 mb-8 
               transform transition-all duration-1000 delay-700 
               ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            >
-              {/* View My Work - Cyan-Purple Gradient with Glow */}
-              <Button
-                onClick={() => scrollToSection("projects")}
-                size="lg"
-                className="flex items-center bg-gradient-to-r from-cyan-500 to-purple-500 
+          >
+            {/* View My Work - Cyan-Purple Gradient with Glow */}
+            <Button
+              onClick={() => scrollToSection("projects")}
+              size="lg"
+              className="flex items-center bg-gradient-to-r from-cyan-500 to-purple-500 
                hover:from-cyan-400 hover:to-purple-600 
                transform hover:scale-105 transition-all duration-300 
                shadow-lg shadow-cyan-500/30 text-white font-semibold animate-pulse-slow"
-              >
-                <Sparkles className="w-5 h-5 mr-2 animate-spin-slow" />
-                View My Work
-              </Button>
+            >
+              <Sparkles className="w-5 h-5 mr-2 animate-spin-slow" />
+              View My Work
+            </Button>
 
-              <Button
-                size="lg"
-                className="flex items-center bg-black text-white 
+            <Button
+              size="lg"
+              className="flex items-center bg-black text-white 
     hover:bg-gray-900 hover:scale-105 transition-all duration-300 
     rounded-lg px-6 py-4 font-semibold shadow-lg"
+            >
+              <a
+                href="https://github.com/yogeshGit11"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex items-center justify-center"
               >
-                <a
-                  href="https://github.com/yogeshGit11"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative flex items-center justify-center"
-                >
-                  <Github className="w-6 h-6 mr-2" />
-                  Visit GitHub
-                </a>
-              </Button>
+                <Github className="w-6 h-6 mr-2" />
+                Visit GitHub
+              </a>
+            </Button>
 
- 
+
             <Button
               size="lg"
               onClick={() => scrollToSection("contact")}

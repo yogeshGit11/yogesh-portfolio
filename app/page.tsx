@@ -84,7 +84,7 @@ export default function Portfolio() {
       id: 3,
       title: "HrithikMania",
       description:
-        "A full-stack fan-made website dedicated to Bollywood superstar Hrithik Roshan, built with React.js (frontend) and Django REST Framework (backend). Features include a PostgreSQL database, AWS S3 media storage, and a fully Dockerized environment with locally tested Kubernetes manifests. Infrastructure is provisioned on AWS EC2 using Terraform, configured via Ansible, and served through a Dockerized Nginx reverse proxy. A robust CI/CD pipeline with GitHub Actions automates testing, building, and deployment. Users can search movies, view detailed cast and director info, box office stats, posters, and synopses.",
+        "a full-stack fan-made website dedicated to bollywood superstar hrithik roshan, built with react.js (frontend) and django rest framework (backend). features include a postgresql database, aws s3 media storage, and a fully dockerized environment with locally tested kubernetes manifests. infrastructure is provisioned on aws ec2 using terraform, configured via ansible, and served through a dockerized nginx reverse proxy. a robust ci/cd pipeline with github actions automates testing, building, and deployment. users can search movies, view detailed cast and director info, box office stats, posters, and synopses.",
       technologies: [
         "React.js",
         "Nginx",
@@ -471,26 +471,7 @@ export default function Portfolio() {
                 </a>
               </Button>
 
-
-
-
-
-              {/* View Resume - Green Gradient with Slide Animation }
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => window.open("/yogesh-portfolio/Yogesh Chaudhari Resume.pdf", "_blank")}
-                className="flex items-center border-yellow-400 text-yellow-400 
-             hover:bg-gradient-to-r hover:from-yellow-400 hover:to-teal-400 
-             hover:text-black transform hover:scale-105 transition-all duration-300 
-             bg-transparent font-semibold animate-gradient-x"
-              >
-                <FaFileAlt className="w-5 h-5 mr-2" />
-                View Resume
-              </Button>
-            </div>
-	   */}
-
+ 
             <Button
               size="lg"
               onClick={() => scrollToSection("contact")}

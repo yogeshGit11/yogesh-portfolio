@@ -2,13 +2,16 @@
 const isProd = process.env.NODE_ENV === 'production'
 
 const nextConfig = {
+  output: 'export',
+
   typescript: {
     ignoreBuildErrors: true,
   },
+
   images: {
     unoptimized: true,
   },
-  output: 'export',
+
   reactStrictMode: true,
 
   basePath: isProd ? '/yogesh-portfolio' : '',

@@ -48,6 +48,9 @@ interface Certification {
 }
 
 export default function Portfolio() {
+  const isProd = process.env.NODE_ENV === "production"
+  const prefix = isProd ? "/yogesh-portfolio" : ""
+
   const [activeSection, setActiveSection] = useState("about")
   const [isVisible, setIsVisible] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -312,9 +315,9 @@ export default function Portfolio() {
                 <div className="w-16 h-10
                   flex items-center justify-center overflow-hidden shrink-0
                   rounded-md
-                  hover:shadow-lg hover:shadow-cyan-400/40">
+                  shadow-lg shadow-yellow-400/80">
                   <img
-                    src="/yogesh-portfolio/logo.png"
+                    src={`${prefix}/logo.png`}
                     alt="YPC logo"
                     className="w-full h-full object-contain pulse-zoom hover:scale-110"
                   />
@@ -385,7 +388,7 @@ export default function Portfolio() {
                 {/* Image container */}
                 <div className="absolute  bg-red dark:bg-gray-900 overflow-hidden rounded-lg shadow-2xl shadow-purple-500/25 flex items-center justify-center">
                   <img
-                    src="/yogesh-portfolio/porfolio.png"
+                    src={`${prefix}/porfolio.png`}
                     alt="Yogesh Chaudhari - Python Developer"
                     className="w-full h-full object-contain animate-pulse-clear"
                     loading="eager"
@@ -396,7 +399,7 @@ export default function Portfolio() {
           </div>
 
           <div
-            className={`transform transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            className={`text-center transform transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
           >
             <h1 className="text-4xl md:text-5xl font-bold text-center 

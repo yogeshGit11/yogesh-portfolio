@@ -1,0 +1,15 @@
+user.name=Pankaj
+user.email=pankaj.s.nimap@worxogo.com
+color.ui=auto
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/yogeshGit11/yogesh-portfolio.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+branch.master.vscode-merge-base=origin/master
+pull.rebase=true
+user.name=yogeshgit11
+user.email=ymali2434@gmail.com

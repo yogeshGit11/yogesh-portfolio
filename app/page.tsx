@@ -235,8 +235,8 @@ export default function Portfolio() {
       duration: "2024 - Present",
       description: [
         "Designed and developed 15+ REST APIs for the Microability module, covering employee dashboards, personalized learning activities, activity submissions, leaderboards, historical performance tracking, and ability-score calculations.",
-"Built Supervisor and Admin APIs for team performance monitoring, KPI management, multi-process KPI mappings, ability-score tracking, and in-app notification management.",
-"Developed a Product Updates module that delivers new release information through login pop-ups and a searchable updates archive, including release-note management, image uploads, and tracking of user-seen updates.",
+        "Built Supervisor and Admin APIs for team performance monitoring, KPI management, multi-process KPI mappings, ability-score tracking, and in-app notification management.",
+        "Developed a Product Updates module that delivers new release information through login pop-ups and a searchable updates archive, including release-note management, image uploads, and tracking of user-seen updates.",
         "Built the main backend system for Xogolign, creating APIs, tracking KPIs, implementing feedback and noticeboard features, and providing admin management tools while ensuring security and client-specific customizations.",
         "Evaluated and enhanced AI-generated Python code and responses at Turing, reviewing outputs for correctness, scalability, readability, and Pythonic best practices; provided structured feedback and suggested optimizations.", "Collaborated with cross-functional teams to integrate APIs, automate deployments, and maintain scalable, secure, and maintainable systems across projects.",
       ],

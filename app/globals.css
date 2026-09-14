@@ -386,3 +386,8 @@ img,
   transition: transform 0.5s ease-out;
 }
 
+.typing-loop {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+}

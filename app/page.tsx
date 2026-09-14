@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -47,6 +47,66 @@ interface Certification {
   url: string;
 }
 
+function Typewriter({
+  phrases,
+  typingSpeed = 80,
+  deletingSpeed = 40,
+  pause = 1400,
+}: {
+  phrases: string[]
+  typingSpeed?: number
+  deletingSpeed?: number
+  pause?: number
+}) {
+  const [text, setText] = useState("")
+  const [index, setIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
+  const timeoutRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    const current = phrases[index % phrases.length]
+    const delay = isDeleting ? deletingSpeed : typingSpeed
+
+    // Clear any existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+      timeoutRef.current = null
+    }
+
+    if (!isDeleting && text === current) {
+      // Finished typing current phrase, wait then start deleting
+      timeoutRef.current = window.setTimeout(() => setIsDeleting(true), pause)
+    } else if (isDeleting && text === "") {
+      // Finished deleting, move to next phrase after a short pause
+      timeoutRef.current = window.setTimeout(() => {
+        setIsDeleting(false)
+        setIndex((i) => i + 1)
+      }, 200)
+    } else {
+      // Continue typing or deleting
+      timeoutRef.current = window.setTimeout(() => {
+        const next = isDeleting ? current.slice(0, text.length - 1) : current.slice(0, text.length + 1)
+        setText(next)
+      }, delay)
+    }
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+        timeoutRef.current = null
+      }
+    }
+  }, [text, isDeleting, index, phrases, typingSpeed, deletingSpeed, pause])
+
+  return (
+    <div className="inline-flex items-center justify-center text-center">
+      <span className="inline-block whitespace-pre-wrap">{text}</span>
+      <span className="inline-block">&nbsp;</span>
+      <span className="text-cyan-400 animate-pulse">|</span>
+    </div>
+  )
+}
+
 export default function Portfolio() {
   const isProd = process.env.NODE_ENV === "production"
   const prefix = isProd ? "/yogesh-portfolio" : ""
@@ -59,8 +119,8 @@ export default function Portfolio() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "AI-powered Nudge Coach (Worxogo)",
-      description: "AI-powered Nudge Coach is a tool that helps companies track and improve how employees perform. It makes work more engaging by using games, feedback, and analytics. I worked as a Senior Backend Developer and built the main backend system using Python. I created APIs to connect different parts of the system, helped track user performance through KPIs, added feedback and noticeboard features, and built tools for admins to manage users and teams. I also made sure the system was secure and customizable for different clients.",
+      title: "AI-powered Nudge Coach | Microlearning Platform (Worxogo)",
+      description: "AI-Powered Workforce Performance & Learning Platform that helps companies improve employee performance through personalized learning, performance tracking, KPIs, feedback, notifications, and analytics. I worked on the backend using Python and Django, developing and optimizing REST APIs for employee dashboards, Microability learning activities, activity submissions, leaderboards, historical performance, team tracking, KPI management, and notifications. I also built backend functionality for a Product Updates module with release-note management, image uploads, user-view tracking, and searchable updates. collaborated with frontend and PHP developers to integrate these modules into the main platform. I also contributed to admin functionality, security, scalability, and client-specific customization.",
       technologies: [
         "Python",
         "Django",
@@ -142,6 +202,27 @@ export default function Portfolio() {
       githubUrl: "https://github.com/yogeshGit11/ML-Powered-Patient-Condition-Forecasting",
       featured: false,
       selfmade: true,
+    },
+    {
+      id: 6,
+      title: "AI Knowledge Assistant-RAG",
+      description: "A Retrieval-Augmented Generation (RAG) application that enables users to upload and interact with PDF documents through natural, context-aware conversations. Powered by Gemini, LangChain, and ChromaDB for intelligent document retrieval and semantic search. Features real-time streaming responses, conversation memory, multi-document search, and precise source citations with page references. Supports document management, including selective search, deletion, and re-indexing.",
+      technologies: [
+        "Python",
+        "FastAPI",
+        "Streamlit",
+        "Gemini",
+        "Gemini Embeddings",
+        "ChromaDB",
+        "LangChain",
+        "SQLite",
+        "Docker",
+        "Docker Compose",
+      ]
+      ,
+      githubUrl: "https://github.com/yogeshGit11/Ai-knowledge-assistant-RAG",
+      featured: false,
+      selfmade: true,
     }
 
   ]
@@ -153,10 +234,11 @@ export default function Portfolio() {
       position: "Python Developer",
       duration: "2024 - Present",
       description: [
-        "Built the main backend system for Xopologin, creating APIs, tracking KPIs, implementing feedback and noticeboard features, and providing admin management tools while ensuring security and client-specific customizations.",
-        "Evaluated and enhanced AI-generated Python code and responses at Turing, reviewing outputs for correctness, scalability, readability, and Pythonic best practices; provided structured feedback and suggested optimizations.",
-        "Developed HrithikMania, a full-stack fan website with React.js frontend and Django REST Framework backend, integrating PostgreSQL, AWS S3, Dockerized services, locally tested Kubernetes manifests, and a CI/CD pipeline with GitHub Actions and Ansible.",
-        "Collaborated with cross-functional teams to integrate APIs, automate deployments, and maintain scalable, secure, and maintainable systems across projects.",
+        "Designed and developed 15+ REST APIs for the Microability module, covering employee dashboards, personalized learning activities, activity submissions, leaderboards, historical performance tracking, and ability-score calculations.",
+"Built Supervisor and Admin APIs for team performance monitoring, KPI management, multi-process KPI mappings, ability-score tracking, and in-app notification management.",
+"Developed a Product Updates module that delivers new release information through login pop-ups and a searchable updates archive, including release-note management, image uploads, and tracking of user-seen updates.",
+        "Built the main backend system for Xogolign, creating APIs, tracking KPIs, implementing feedback and noticeboard features, and providing admin management tools while ensuring security and client-specific customizations.",
+        "Evaluated and enhanced AI-generated Python code and responses at Turing, reviewing outputs for correctness, scalability, readability, and Pythonic best practices; provided structured feedback and suggested optimizations.", "Collaborated with cross-functional teams to integrate APIs, automate deployments, and maintain scalable, secure, and maintainable systems across projects.",
       ],
       technologies: [
         "Python",
@@ -399,17 +481,29 @@ export default function Portfolio() {
           </div>
 
           <div
-            className={`text-center transform transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            className={`text-center transform transition-all duration-1000 delay-300 ${isVisible
+              ? "translate-y-0 opacity-100"
+              : "translate-y-10 opacity-0"
               }`}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-center 
-                 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 
-                 bg-clip-text text-transparent 
-                 mb-5
-                 typing-loop">
-              Hello! I’m Yogesh
+            <h1
+              className="
+      text-3xl md:text-5xl
+      font-bold
+      text-center
+      bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400
+      bg-clip-text text-transparent
+      mb-5
+    "
+            >
+              <Typewriter
+                phrases={[
+                  "Welcome, kind soul to my little corner of the internet.",
+                ]}
+              />
             </h1>
           </div>
+
 
 
 
@@ -422,15 +516,26 @@ export default function Portfolio() {
           >
             <p className="font-sans text-lg md:text-xl text-slate-300 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed text-center">
               <span
-                className="text-2xl md:text-2xl font-semibold text-center
-               bg-gradient-to-r from-yellow-400 via-yellow-400 to-yellow-400
-               bg-clip-text text-transparent 
-               mt-2 animate-gradient-x hover:scale-105 transition-transform duration-700"
+                className="text-2xl md:text-2xl font-semibold
+    bg-gradient-to-r from-yellow-400 via-yellow-400 to-yellow-400
+    bg-clip-text text-transparent
+    animate-gradient-x"
               >
-                Python Developer
-              </span> with 2+ years of building scalable web applications and APIs.
-              Passionate about solving technical challenges, optimizing performance, and delivering innovative solutions. Self-taught developer.
+                Full Stack Python Developer
+              </span>{" "}
+              with{" "}
+              <span
+                className="font-semibold
+    bg-gradient-to-r from-yellow-400 via-yellow-400 to-yellow-400
+    bg-clip-text text-transparent"
+              >
+                2.5 years of experience
+              </span>{" "}
+              building scalable web applications and APIs. I’m passionate about solving
+              complex technical challenges, optimizing performance, and creating
+              innovative, reliable solutions.
             </p>
+
           </div>
 
 
@@ -694,6 +799,42 @@ export default function Portfolio() {
               <p className="text-md mb-1 text-white">Kavayitri Bahinabai Chaudhari North Maharashtra University(NMU), Jalgaon</p>
               <p className="text-md mb-1 text-white">2018 – 2023</p>
               <p className="text-md text-green-300 font-medium">CGPA: 9.44 / 10</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center justify-center gap-4 mt-2">
+            <div className="bg-slate-800/70 border border-gray-400 rounded-lg shadow-lg p-8 w-full max-w-4xl animate-fade-in"> {/* Increased max-w-3xl to max-w-4xl */}
+              <h3 className="text-2xl font-semibold text-white mb-2">
+                <a href="#" target="" rel="noopener noreferrer" className="hover:underline text-yellow-300">
+                  Class XII (Higher Secondary)
+                </a>
+              </h3>
+              <p className="text-lg text-slate-300 mb-1">
+                <a href="https://prgscience.com/" target="_blank" rel="noopener noreferrer" className="hover:underline text-green-300">
+                  Shri Shivaji Vidya Prasarak Sanstha's Late Karmveer Dr. P. R. Ghogrey Science College, Dhule
+                </a>
+              </p>
+              <p className="text-md mb-1 text-white">Kavayitri Bahinabai Chaudhari North Maharashtra University(NMU), Jalgaon</p>
+              <p className="text-md mb-1 text-white">2016 – 2018</p>
+              <p className="text-md text-green-300 font-medium">Percentage: 61.38%</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center justify-center gap-4 mt-2">
+            <div className="bg-slate-800/70 border border-gray-400 rounded-lg shadow-lg p-8 w-full max-w-4xl animate-fade-in"> {/* Increased max-w-3xl to max-w-4xl */}
+              <h3 className="text-2xl font-semibold text-white mb-2">
+                <a href="#" target="" rel="noopener noreferrer" className="hover:underline text-yellow-300">
+                  Class X (Secondary Education)
+                </a>
+              </h3>
+              <p className="text-lg text-slate-300 mb-1">
+                <a href="" target="" rel="noopener noreferrer" className="hover:underline text-green-300">
+                  Bapusaheb Shivajirao Raymal Deore Madhyamik Vidyalaya, Boris, Dhule
+                </a>
+              </p>
+              <p className="text-md mb-1 text-white">Kavayitri Bahinabai Chaudhari North Maharashtra University(NMU), Jalgaon</p>
+              <p className="text-md mb-1 text-white">2015 – 2016</p>
+              <p className="text-md text-green-300 font-medium">Percentage: 75.00%</p>
             </div>
           </div>
         </div>
